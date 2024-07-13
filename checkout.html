@@ -215,12 +215,12 @@
         </div>
         <div class="cost-box">
             <div>
-                <p>Standard Package</p>
+                <p>Shipping</p>
                 <p>FREE</p>
             </div>
             <div>
                 <p>Total TAX</p>
-                <p class="VAT">$0</p>
+                <p class="VAT"></p>
             </div>
             <div>
                 <p>Total Amount</p>
@@ -269,7 +269,9 @@
                     mainView.appendChild(productBox);
                 });
                 const totalPrice = cart.reduce((total, item) => total + item.price, 0);
+                const totalTax = (totalPrice * 0.08).toFixed(2);
                 document.querySelector('.amt').textContent = `$${totalPrice}`;
+                document.querySelector('.VAT').textContent = `$${totalTax}`;
             } else {
                 // If cart data is not found, display a message
                 document.querySelector('.main-view').innerHTML = '<p>No items in the cart.</p>';

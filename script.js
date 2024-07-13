@@ -126,6 +126,10 @@ function listProducts() {
 }
 
 function detailsPage(productId) {
+    if(isNaN(productId)) {
+        terminalOutput.innerHTML += 'Invalid product ID. Please enter a valid product ID.<br>';
+        return;
+    }
     const product = products[productId - 1];
     if (product) {
         terminalOutput.innerHTML += `Product Details:\n` +
@@ -138,16 +142,38 @@ function detailsPage(productId) {
 }
 
 function addToCart(productId) {
-    const product = products[productId - 1];
-    if (product) {
+    if(isNaN(productId)) {
+        terminalOutput.innerHTML += 'Invalid product ID. Please enter a valid product ID.<br>';
+        return;
+    }
+    // const product = products[productId - 1];
+    // if (product) {
+    //     cart.push(product);
+    //     terminalOutput.innerHTML += `${product.title} added to cart.\n`;
+    const productCards = document.querySelectorAll('.main article.card');
+    if ((productId < productCards.length || productId > 0) ) {
+        const productCard = document.getElementById(`img${productId}`).closest('.card');
+        const name = productCard.querySelector('.card__name p').textContent;
+        const price = parseFloat(productCard.querySelector('.card__preci--now').textContent.replace('$', '')); // Convert price to float
+        const imageSrc = productCard.querySelector('.card__img img').src; // Get the image source URL
+        const product = { name, price, imageSrc }; // Include imageSrc in the product object
         cart.push(product);
-        terminalOutput.innerHTML += `${product.title} added to cart.\n`;
+
+        // Calculate total amount
+        const totalAmount = cart.reduce((acc, curr) => acc + curr.price, 0);
+        document.querySelector(".amount").textContent = `$ ${totalAmount.toFixed(2)}`; // Update total amount in the cart
+
+        terminalOutput.innerHTML += `${product.name} added to cart.<br>`;
     } else {
         terminalOutput.innerHTML += `Product not found with ID: ${productId}\n`;
     }
 }
 
 function removeFromCart(productId) {
+    if(isNaN(productId)) {
+        terminalOutput.innerHTML += 'Invalid product ID. Please enter a valid product ID.<br>';
+        return;
+    }
     const index = cart.findIndex((item, index) => index + 1 === productId);
     if (index !== -1) {
         const removedProduct = cart.splice(index, 1)[0];
@@ -172,8 +198,9 @@ function buyCart() {
     if (cart.length === 0) {
         terminalOutput.innerHTML += 'Your cart is empty.\n';
     } else {
-        const total = cart.reduce((sum, product) => sum + product.price, 0);
-        terminalOutput.innerHTML += `Purchased ${cart.length} items for $${total.toFixed(2)}.\n`;
+        terminalOutput.innerHTML += `Proceeding to checkout...\n`;
+        sessionStorage.setItem('cart', JSON.stringify(cart));
+        window.location.href = 'checkout.html';
         cart.length = 0; // Clear the cart
     }
 }
