@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Terminal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="main-view">
+            <div class="nav">
+                <div class="nav-header">
+                    <img src="./assets/logo.jpg" alt="logo">
+                    <div class="nav-title">
+                        Foot Hut
+                    </div>
+                </div>
+                <div class="nav-links">
+                    <a href="#">Home</a>
+                    <a href="#">Shop</a>
+                    <a href="#">Contact</a>
+                    <a href="#">About</a>
+                </div>
+                <div class="icons">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="#1f1f1f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-search">
+                        <circle cx="11" cy="11" r="8" />
+                        <path d="m21 21-4.3-4.3" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="#1f1f1f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-heart">
+                        <path
+                            d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="#3a3939" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-shopping-cart">
+                        <circle cx="8" cy="21" r="1" />
+                        <circle cx="19" cy="21" r="1" />
+                        <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+                    </svg>
+                    <span class="amount">$ 0.00</span>
+                </div>
+            </div>
+            <div class="product-catalog">
+                <h1 class="title-shop">Explore Products</h1>
+                <main class="main bd-grid" id="product-list">
+                    <!-- Products will be dynamically loaded here -->
+                </main>
+                <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+            </div>
+        </div>
+        <div class="side-view">
+            <div class="terminal">
+                <section id="terminal__bar">
+                    <div id="bar__buttons">
+                        <button class="bar__button" id="bar__button--exit">&#10005;</button>
+                        <button class="bar__button">&#9472;</button>
+                        <button class="bar__button">&#9723;</button>
+                    </div>
+                    <p id="bar__user">user@ubuntu: ~</p>
+                </section>
+                <div class="terminal-window">
+                    <div class="terminal-output"></div>
+                    <div class="terminal-input">
+                        <div id="terminal__prompt">
+                            <span id="terminal__prompt--user">user@ubuntu:</span>
+                            <span id="terminal__prompt--location">~</span>
+                            <span id="terminal__prompt--bling">$</span>
+                        </div>
+                        <input type="text" placeholder="Enter help to see all commands">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
