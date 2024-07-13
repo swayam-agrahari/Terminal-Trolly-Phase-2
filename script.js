@@ -198,10 +198,12 @@ function sortProducts(sortBy) {
         case 'price':
             sortedProducts = products.slice().sort((a, b) => a.price - b.price);
             displaySortedProducts(sortedProducts);
+            terminalOutput.innerHTML += 'Products sorted by price.\n';
             break;
         case 'name':
             sortedProducts = products.slice().sort((a, b) => a.title.localeCompare(b.title));
             displaySortedProducts(sortedProducts);
+            terminalOutput.innerHTML += 'Products sorted by name.\n';
             break;
         default:
             terminalOutput.innerHTML += 'Invalid sort command. Use "price" or "name".\n';
