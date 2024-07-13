@@ -20,11 +20,9 @@ You are always welcome to surf the web to learn more!
 
 ## Guidlines
 
-In this task, you are provided with a website containing a broken terminal. Your first objective is to recreate the User Interface (UI) displayed on the left side of the terminal, as shown in the demo provided below. You have the assets needed in the asset folder provided with this repository. The design can be customized freely while ensuring it contains all the elements shown in the demo.
+In this task, you are provided with a website containing a broken terminal. Your first objective is to recreate the User Interface (UI) displayed on the left side of the terminal, as shown in the demo provided below. You have to fetch the assets needed from the API we have provided. The design can be customized freely while ensuring it contains all the elements shown in the demo.
 
-You will get all the assets needed in the asset folder included in this repository and you can find the data to be used [here.](https://docs.google.com/spreadsheets/d/1dAYYM137rHW0y2ACILgFBn-g5tYDa2aDWpWWj6RHBQo/edit?usp=sharing)
-
-https://github.com/Drone944/TerminalTrolly/assets/109474492/8723299d-f064-4090-8a5d-10c716bffc37
+API : https://fakestoreapi.com/products
 
 Your next objective is to integrate functional commands into the terminal. Below are the commands to implement along with their descriptions:
 
@@ -35,6 +33,8 @@ Your next objective is to integrate functional commands into the terminal. Below
 - cart: View the current items in your cart.
 - buy: Proceed to a new webpage where you can review items in your cart along with the total price, enabling you to finalize your purchase.
 - clear: Clear the terminal screen.
+- search 'product_name': Search a product by name.
+- sort 'price/name': Sort the products based on the price or the name.
 
 Implementing these commands will make the terminal interactive and functional. The "buy" command, in particular, should lead to a webpage displaying your cart contents and total price, facilitating the checkout process.
 
