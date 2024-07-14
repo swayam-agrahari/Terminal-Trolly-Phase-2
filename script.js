@@ -126,7 +126,7 @@ function listProducts() {
 }
 
 function detailsPage(productId) {
-    if(isNaN(productId)) {
+    if (isNaN(productId)) {
         terminalOutput.innerHTML += 'Invalid product ID. Please enter a valid product ID.<br>';
         return;
     }
@@ -142,7 +142,7 @@ function detailsPage(productId) {
 }
 
 function addToCart(productId) {
-    if(isNaN(productId)) {
+    if (isNaN(productId)) {
         terminalOutput.innerHTML += 'Invalid product ID. Please enter a valid product ID.<br>';
         return;
     }
@@ -151,7 +151,7 @@ function addToCart(productId) {
     //     cart.push(product);
     //     terminalOutput.innerHTML += `${product.title} added to cart.\n`;
     const productCards = document.querySelectorAll('.main article.card');
-    if ((productId < productCards.length || productId > 0) ) {
+    if ((productId < productCards.length || productId > 0)) {
         const productCard = document.getElementById(`img${productId}`).closest('.card');
         const name = productCard.querySelector('.card__name p').textContent;
         const price = parseFloat(productCard.querySelector('.card__preci--now').textContent.replace('$', '')); // Convert price to float
@@ -170,7 +170,7 @@ function addToCart(productId) {
 }
 
 function removeFromCart(productId) {
-    if(isNaN(productId)) {
+    if (isNaN(productId)) {
         terminalOutput.innerHTML += 'Invalid product ID. Please enter a valid product ID.<br>';
         return;
     }
@@ -189,7 +189,7 @@ function viewCart() {
     } else {
         terminalOutput.innerHTML += 'Your Cart:\n';
         cart.forEach((product, index) => {
-            terminalOutput.innerHTML += `${index + 1}. ${product.title} - $${product.price.toFixed(2)}\n`;
+            terminalOutput.innerHTML += `${index + 1}. ${product.name} - $${product.price.toFixed(2)}\n`;
         });
     }
 }

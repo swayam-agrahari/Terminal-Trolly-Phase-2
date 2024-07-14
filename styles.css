@@ -44,9 +44,11 @@ h1 {
 }
 
 img {
-    max-width: 100%;
-    height: auto;
+    min-width: 10vw;
+    height: 25vh;
     mix-blend-mode: multiply;
+    object-fit: cover;
+
 }
 
 a {
