@@ -22,7 +22,6 @@ You are always welcome to surf the web to learn more!
 
 In this task, you are provided with a website containing a broken terminal. Your first objective is to recreate the User Interface (UI) displayed on the left side of the terminal, as shown in the demo provided below. You have to fetch the assets needed from the API we have provided. The design can be customized freely while ensuring it contains all the elements shown in the demo.
 
-https://github.com/swayam-agrahari/Terminal-Trolly-Phase-2/blob/master/assets/demo.mp4 
 <br>
 API : https://fakestoreapi.com/products
 
